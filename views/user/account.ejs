@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <%- include('../partials/headTags') %>
+        <title>Account</title>
+    </head>
+
+    <body>
+        <%- include('../partials/header') %>
+        <main>
+            <h2>Manage your Account</h2>
+
+            <form id="update">
+                <!-- Change username -->
+                <h3>
+                    Change your Username
+                </h3>
+                <div class="form-field">
+                    <label for="field-username">Username</label>
+                    <input type="text" name="username" id="field-username" value="<%= username %>" />
+                </div>
+
+
+                <!-- Change password -->
+                <h3>
+                    Change your password
+                </h3>
+                <div class="form-field">
+                    <label for="field-password">New Password</label>
+                    <input type="password" name="password-new" id="field-password" />
+                </div>
+                <!-- TODO: Implement this -->
+                <div class="form-field">
+                    <label for="field-password-repeat">Repeat New Password</label>
+                    <input type="password" name="password-repeat" id="field-password-repeat" />
+                </div>
+                <input type="submit" value="Update" />
+            </form>
+
+            <div><button id="delete">Delete account</button></div>
+        </main>
+    </body>
+
+    <script src="/js/account.js"></script>
+
+</html>

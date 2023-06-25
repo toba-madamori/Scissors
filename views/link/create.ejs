@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/headTags') %>
+        <title>Create a new link</title>
+    </head>
+
+    <body>
+        <%- include('../partials/header') %>
+
+        <main>
+            <h1>Create a new link</h1>
+            <form id="form" method="post">
+                <div class="form-field">
+                    <label for="field-url">URL</label>
+                    <input
+                        type="text"
+                        name="url"
+                        id="field-url"
+                        placeholder="Enter destination URL"
+                        autofocus
+                    />
+                </div>
+
+                <div class="form-field">
+                    <label for="field-description">Description</label>
+                    <input
+                        type="text"
+                        name="description"
+                        id="field-description"
+                        placeholder="Short description (Optional)"
+                    />
+                </div>
+
+                <div class="form-field">
+                    <label for="field-alias">Custom Alias</label>
+                    <input
+                        type="text"
+                        name="alias"
+                        id="field-alias"
+                        placeholder="Leave blank for random"
+                    />
+                </div>
+
+                <div class="form-field">
+                    <label>Generate QR Code  <input type="checkbox" name="qr" checked></label>
+                </div>
+
+                <input type="submit" value="Create link" />
+            </form>
+        </main>
+    </body>
+
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script src="/js/create.js"></script>
+</html>

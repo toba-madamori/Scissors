@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/headTags') %>
+        <title>Signup</title>
+    </head>
+    <body>
+        <%- include('../partials/headerPlain') %>
+
+        <main>
+            <form id="form" method="post">
+                <h2>Create a new account</h2>
+                <div class="form-field">
+                    <label for="field-username">Username</label>
+                    <input type="text" name="username" id="field-username" autofocus/>
+                </div>
+
+                <div class="form-field">
+                    <label for="field-email">Email</label>
+                    <input type="email" name="email" id="field-email" />
+                </div>
+                <div class="form-field">
+                    <label for="field-password">Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="field-password"
+                    />
+                </div>
+                <!-- TODO: Implement this -->
+                <div class="form-field">
+                    <label for="field-password-repeat">Repeat Password</label>
+                    <input
+                        type="password"
+                        name="password-repeat"
+                        id="field-password-repeat"
+                    />
+                </div>
+
+                <input type="submit" value="Create" />
+            </form>
+        </main>
+    </body>
+
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script src="/js/signup.js"></script>
+</html>

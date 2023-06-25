@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('partials/headTags') %>
+        <title>404</title>
+    </head>
+    <body>
+        <%- include('partials/headerPlain') %>
+
+        <main>
+            <h1>Sorry that route does not exist</h1>
+
+            <% if (username) { %>
+            <a href="/home">Return home</a>
+            <% } else { %>
+            <a href="/a/signup">Create a new account</a>
+            <a href="/a/signin">Log in to your account</a>
+            <% } %>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <%- include('../partials/headTags') %>
+        <title>Link: <%= link.alias %></title>
+    </head>
+
+    <body>
+        <%- include('../partials/header') %>
+
+        <main>
+            <section id="link-sect">
+                <div class="l-details">
+                    <a href="/l/<%= link.alias %>/edit" class="l-edit"><span class="material-symbols-outlined">edit</span></a>
+                    <h2 class="l-alias" id="alias"><%= link.alias %></h2>
+                    <% if (link.description) { %>
+                    <p class="l-desc"><span>Description: </span><%= link.description %></p>
+                    <% } else { %>
+                    <p class="l-desc">No description provided</p>
+                    <% } %>
+                    <p>
+                        <span>URL:</span>
+                        <a href="<%= link.url %>" target="_blank" rel="noopener noreferrer">
+                            <%= link.url %>
+                        </a> 
+                    </p>
+                    <p><span>Created at: </span> <%= link.createdAt %></p>
+                </div>
+                <div id="qrcode">
+                    <% if (link.qr) { %>
+                        <img alt="QRCode Image" id="qrcode-img">
+                    <% } %>
+                    <div id="qrcode-info">
+                        <% if (!link.qr) { %>
+                            <img src="/images/dummy-qrcode.png" alt="dummy qrcode">
+                            <p>Update link to generate</p>
+                        <% } %>
+                    </div>
+                </div>
+            </section>
+
+            <section class="hits">
+                <h3>Hits: <%= link.hits.length %></h3>
+                <div class="clicks-and-scans">
+                    <h4>Clicks: <%= numClicks %></h4>
+                    <h4>Scans: <%= numScans %></h4>
+                </div>
+                <ul id="hit-list">
+                    <% link.hits.forEach(hit => { %>
+                    <li class="hit">
+                        <h5> <%= hit %> </h5>
+                        
+                    </li>
+                    <!-- TODO: Detail hit structure -->
+                    <% }) %>
+                </ul>
+            </section>
+
+        </main>
+    </body>
+
+    <script src="/js/link.js"></script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <%- include('../partials/headTags') %>
+        <title>Signin</title>
+    </head>
+
+    <body>
+        <%- include('../partials/headerPlain') %>
+
+        <main>
+            <form method="post">
+                <h2>Log in to your account</h2>
+
+                <div class="form-field">
+                    <label for="field-email">Email</label>
+                    <input type="email" name="email" id="field-email">
+                </div>
+                <div class="form-field">
+                    <label for="field-password">Password</label>
+                    <input type="password" name="password" id="field-password">
+                </div>
+
+                <input type="submit" value="Log in">
+
+            </form>
+
+        </main>
+
+    </body>
+
+</html>
